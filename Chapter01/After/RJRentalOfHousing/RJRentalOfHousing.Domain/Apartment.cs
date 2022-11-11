@@ -14,9 +14,9 @@
 
         public string Address { get;internal set; }
 
-        public decimal Rent { get; internal set; }
+        public Price Rent { get; internal set; }
 
-        public decimal Deposit { get; internal set; }
+        public Price Deposit { get; internal set; }
 
         public UserId Owner { get; internal set; }
 
