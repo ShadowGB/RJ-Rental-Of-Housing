@@ -6,6 +6,7 @@
         {
             Id = id;
             Owner = ownerId;
+            State = ApartmentState.Created;
         }
 
         public ApartmentId Id { get; internal set; }
@@ -24,16 +25,84 @@
 
         public UserId ApprovedBy { get; internal set; }
 
-        public void SetArea(Area area) => Areas = area;
+        public ApartmentState State { get; internal set; }
 
-        public void SetAddress(Address address) => Address = address;
+        public void SetArea(Area area)
+        {
+            Areas = area;
+            EnsureValidState();
+        }
 
-        public void SetRent(Price rent) => Rent = rent;
+        public void SetAddress(Address address)
+        {
+            Address = address;
+            EnsureValidState();
+        }
 
-        public void SetDeposit(Price deposit) => Deposit = deposit;
+        public void SetRent(Price rent)
+        {
+            Rent = rent;
+            EnsureValidState();
+        }
 
-        public void SetOwner(UserId owner) => Owner = owner;
+        public void SetDeposit(Price deposit)
+        {
+            Deposit = deposit;
+            EnsureValidState();
+        }
 
-        public void SetRemark(string remark) => Remark = remark;
+        public void SetOwner(UserId owner)
+        {
+            Owner = owner;
+            EnsureValidState();
+        }
+
+        public void SetRemark(string remark)
+        {
+            Remark = remark;
+            EnsureValidState();
+        }
+
+        public void RequestToPublish()
+        {
+            State = ApartmentState.Renting;
+            EnsureValidState();
+        }
+
+        protected void EnsureValidState()
+        {
+            var valid =
+                Id != null &&
+                Owner != null &&
+                (
+                  State switch
+                  {
+                      ApartmentState.PendingReview =>
+                      Areas != null &&
+                      Address != null &&
+                      Rent.Amount > 0 &&
+                      Deposit.Amount > 0,
+                      ApartmentState.Renting =>
+                      Areas != null &&
+                      Address != null &&
+                      Rent.Amount > 0 &&
+                      Deposit.Amount > 0 &&
+                      ApprovedBy != null,
+                      _ => true
+                  }
+                );
+            if (!valid)
+                throw new InvalidEntityStateException(this,$"实体提交状态{State}检查失败");
+        }
+
+        public enum ApartmentState
+        {
+            Created,
+            PendingReview,
+            Renting,
+            Rented
+        }
     }
+
+
 }
