@@ -1,6 +1,4 @@
-﻿using System.Net;
-
-namespace RJRentalOfHousing.Domain
+﻿namespace RJRentalOfHousing.Domain
 {
     public class Apartment:Entity
     {
