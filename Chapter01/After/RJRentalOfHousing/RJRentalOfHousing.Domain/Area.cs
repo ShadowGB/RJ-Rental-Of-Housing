@@ -10,5 +10,7 @@
                 throw new ArgumentOutOfRangeException("面积必须大于0");
             Value = value;
         }
+
+        public static implicit operator decimal(Area value) => value.Value;
     }
 }

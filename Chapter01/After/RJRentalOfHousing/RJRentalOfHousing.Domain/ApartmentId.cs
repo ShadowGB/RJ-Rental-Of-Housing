@@ -10,5 +10,7 @@
                 throw new ArgumentException("Id不能为空");
             Value = value;
         }
+
+        public static implicit operator Guid(ApartmentId value) => value.Value;
     }
 }

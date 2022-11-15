@@ -10,5 +10,7 @@
                 throw new ArgumentException("地址不能为空");
             Value = value;
         }
+
+        public static implicit operator string(Address value) => value.Value;
     }
 }

@@ -1,13 +1,15 @@
-﻿namespace RJRentalOfHousing.Domain
+﻿using System.Net;
+
+namespace RJRentalOfHousing.Domain
 {
-    public class Apartment
+    public class Apartment:Entity
     {
         public Apartment(ApartmentId id, UserId ownerId)
-        {
-            Id = id;
-            Owner = ownerId;
-            State = ApartmentState.Created;
-        }
+            => Apply(new Events.ApartmentCreated
+            {
+                Id = id,
+                OwnerId = ownerId
+            });
 
         public ApartmentId Id { get; internal set; }
 
@@ -28,48 +30,49 @@
         public ApartmentState State { get; internal set; }
 
         public void SetArea(Area area)
-        {
-            Areas = area;
-            EnsureValidState();
-        }
+            => Apply(new Events.ApartmentAreaUpdated
+            {
+                Id = Id,
+                Areas = area
+            });
 
         public void SetAddress(Address address)
-        {
-            Address = address;
-            EnsureValidState();
-        }
+            => Apply(new Events.ApartmentAddressUpdated
+            {
+                Id = Id,
+                Address = address
+            });
 
         public void SetRent(Price rent)
-        {
-            Rent = rent;
-            EnsureValidState();
-        }
+            => Apply(new Events.AparementRentUpdated
+            {
+                Id = Id,
+                Rent = rent.Amount,
+                CurrencyCode = rent.Currency.CurrencyCode
+            });
 
         public void SetDeposit(Price deposit)
-        {
-            Deposit = deposit;
-            EnsureValidState();
-        }
-
-        public void SetOwner(UserId owner)
-        {
-            Owner = owner;
-            EnsureValidState();
-        }
+            => Apply(new Events.ApartmentDepositUpdated
+            {
+                Id = Id,
+                Deposit = deposit.Amount,
+                CurrencyCode = deposit.Currency.CurrencyCode
+            });
 
         public void SetRemark(string remark)
-        {
-            Remark = remark;
-            EnsureValidState();
-        }
+            => Apply(new Events.ApartmentRemarkUpdated
+            {
+                Id = Id,
+                Remark = remark
+            });
 
         public void RequestToPublish()
-        {
-            State = ApartmentState.Renting;
-            EnsureValidState();
-        }
+            => Apply(new Events.AparetmentSentForReview
+            {
+                Id = Id,
+            });
 
-        protected void EnsureValidState()
+        protected override void EnsureValidState()
         {
             var valid =
                 Id != null &&
@@ -80,19 +83,49 @@
                       ApartmentState.PendingReview =>
                       Areas != null &&
                       Address != null &&
-                      Rent.Amount > 0 &&
-                      Deposit.Amount > 0,
+                      Rent?.Amount > 0 &&
+                      Deposit?.Amount > 0,
                       ApartmentState.Renting =>
                       Areas != null &&
                       Address != null &&
-                      Rent.Amount > 0 &&
-                      Deposit.Amount > 0 &&
+                      Rent?.Amount > 0 &&
+                      Deposit?.Amount > 0 &&
                       ApprovedBy != null,
                       _ => true
                   }
                 );
             if (!valid)
                 throw new InvalidEntityStateException(this,$"实体提交状态{State}检查失败");
+        }
+
+        protected override void When(object @event)
+        {
+            switch(@event)
+            {
+                case Events.ApartmentCreated e:
+                    Id = new ApartmentId(e.Id);
+                    Owner = new UserId(e.OwnerId);
+                    State = ApartmentState.Created;
+                    break;
+                case Events.ApartmentAreaUpdated e:
+                    Areas = new Area(e.Areas);
+                    break;
+                case Events.ApartmentAddressUpdated e:
+                    Address = new Address(e.Address);
+                    break;
+                case Events.AparementRentUpdated e:
+                    Rent = new Price(e.Rent, e.CurrencyCode);
+                    break;
+                case Events.ApartmentDepositUpdated e:
+                    Deposit = new Price(e.Deposit, e.CurrencyCode);
+                    break;
+                case Events.ApartmentRemarkUpdated e:
+                    Remark = e.Remark;
+                    break;
+                case Events.AparetmentSentForReview _:
+                    State = ApartmentState.PendingReview;
+                    break;
+            }
         }
 
         public enum ApartmentState

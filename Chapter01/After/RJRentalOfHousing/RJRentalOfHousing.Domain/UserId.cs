@@ -10,6 +10,7 @@
                 throw new ArgumentException("用户编号不能为空");
             Value = value;
         }
-    
+
+        public static implicit operator Guid(UserId value) => value.Value;
     }
 }
