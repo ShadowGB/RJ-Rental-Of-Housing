@@ -1,0 +1,12 @@
+F:\DDDDemo\RJ-Rental-Of-Housing\Chapter01\After\RJRentalOfHousing\RJRentalOfHousing.Domain\bin\Debug\net6.0\RJRentalOfHousing.Domain.deps.json
+F:\DDDDemo\RJ-Rental-Of-Housing\Chapter01\After\RJRentalOfHousing\RJRentalOfHousing.Domain\bin\Debug\net6.0\RJRentalOfHousing.Domain.dll
+F:\DDDDemo\RJ-Rental-Of-Housing\Chapter01\After\RJRentalOfHousing\RJRentalOfHousing.Domain\bin\Debug\net6.0\RJRentalOfHousing.Domain.pdb
+F:\DDDDemo\RJ-Rental-Of-Housing\Chapter01\After\RJRentalOfHousing\RJRentalOfHousing.Domain\obj\Debug\net6.0\RJRentalOfHousing.Domain.csproj.AssemblyReference.cache
+F:\DDDDemo\RJ-Rental-Of-Housing\Chapter01\After\RJRentalOfHousing\RJRentalOfHousing.Domain\obj\Debug\net6.0\RJRentalOfHousing.Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\DDDDemo\RJ-Rental-Of-Housing\Chapter01\After\RJRentalOfHousing\RJRentalOfHousing.Domain\obj\Debug\net6.0\RJRentalOfHousing.Domain.AssemblyInfoInputs.cache
+F:\DDDDemo\RJ-Rental-Of-Housing\Chapter01\After\RJRentalOfHousing\RJRentalOfHousing.Domain\obj\Debug\net6.0\RJRentalOfHousing.Domain.AssemblyInfo.cs
+F:\DDDDemo\RJ-Rental-Of-Housing\Chapter01\After\RJRentalOfHousing\RJRentalOfHousing.Domain\obj\Debug\net6.0\RJRentalOfHousing.Domain.csproj.CoreCompileInputs.cache
+F:\DDDDemo\RJ-Rental-Of-Housing\Chapter01\After\RJRentalOfHousing\RJRentalOfHousing.Domain\obj\Debug\net6.0\RJRentalOfHousing.Domain.dll
+F:\DDDDemo\RJ-Rental-Of-Housing\Chapter01\After\RJRentalOfHousing\RJRentalOfHousing.Domain\obj\Debug\net6.0\refint\RJRentalOfHousing.Domain.dll
+F:\DDDDemo\RJ-Rental-Of-Housing\Chapter01\After\RJRentalOfHousing\RJRentalOfHousing.Domain\obj\Debug\net6.0\RJRentalOfHousing.Domain.pdb
+F:\DDDDemo\RJ-Rental-Of-Housing\Chapter01\After\RJRentalOfHousing\RJRentalOfHousing.Domain\obj\Debug\net6.0\ref\RJRentalOfHousing.Domain.dll
