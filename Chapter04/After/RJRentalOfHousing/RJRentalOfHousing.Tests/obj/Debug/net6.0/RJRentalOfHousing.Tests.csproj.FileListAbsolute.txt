@@ -304,3 +304,4 @@ F:\DDDDemo\RJ-Rental-Of-Housing\Chapter03\After\RJRentalOfHousing\RJRentalOfHous
 F:\DDDDemo\RJ-Rental-Of-Housing\Chapter03\After\RJRentalOfHousing\RJRentalOfHousing.Tests\obj\Debug\net6.0\RJRentalOfHousing.Tests.pdb
 F:\DDDDemo\RJ-Rental-Of-Housing\Chapter03\After\RJRentalOfHousing\RJRentalOfHousing.Tests\obj\Debug\net6.0\RJRentalOfHousing.Tests.genruntimeconfig.cache
 F:\DDDDemo\RJ-Rental-Of-Housing\Chapter03\After\RJRentalOfHousing\RJRentalOfHousing.Tests\obj\Debug\net6.0\ref\RJRentalOfHousing.Tests.dll
+F:\DDDDemo\RJ-Rental-Of-Housing\Chapter04\After\RJRentalOfHousing\RJRentalOfHousing.Tests\bin\Debug\net6.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll

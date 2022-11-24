@@ -6,30 +6,33 @@ namespace RJRentalOfHousing
 {
     public class ApartmentsApplicationService : IApplicationService
     {
-        private readonly IEntityStore _entityStore;
+        private readonly IApartmentRepository _repository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly ICurrencyLookup _currencyLookup;
 
-        public ApartmentsApplicationService(IEntityStore entityStore,ICurrencyLookup currencyLookup)
+        public ApartmentsApplicationService(IApartmentRepository repository,IUnitOfWork unitOfWork,ICurrencyLookup currencyLookup)
         {
-            _entityStore = entityStore;
+            _repository = repository;
+            _unitOfWork = unitOfWork;
             _currencyLookup = currencyLookup;
         }
 
         private async Task HandldCreate(V1.Create cmd)
         {
-            if (await _entityStore.Exists(cmd.Id.ToString()))
+            if (await _repository.Exists(new ApartmentId(cmd.Id)))
                 throw new InvalidOperationException($"{cmd.Id}已存在");
             var apartment = new Apartment(new ApartmentId(cmd.Id), new UserId(cmd.OwnerId));
-            await _entityStore.Save(apartment);
+            await _repository.Add(apartment);
+            await _unitOfWork.Commit();
         }
 
         private async Task HandleUpdate(Guid ApartmentId,Action<Apartment> operation)
         {
-            var apartment = await _entityStore.Load<Apartment>(ApartmentId.ToString());
+            var apartment = await _repository.Load(new ApartmentId(ApartmentId));
             if (apartment == null)
                 throw new InvalidOperationException($"{ApartmentId}不存在");
             operation(apartment);
-            await _entityStore.Save(apartment);
+            await _unitOfWork.Commit();
         }
 
         public async Task Handle(object command)

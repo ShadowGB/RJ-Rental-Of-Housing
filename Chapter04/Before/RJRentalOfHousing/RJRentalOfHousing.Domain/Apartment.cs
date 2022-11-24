@@ -1,17 +1,19 @@
-﻿using System.Net;
+﻿using RJRentalOfHousing.Framework;
 
 namespace RJRentalOfHousing.Domain
 {
-    public class Apartment:Entity
+    public class Apartment:AggregateRoot<ApartmentId>
     {
         public Apartment(ApartmentId id, UserId ownerId)
-            => Apply(new Events.ApartmentCreated
+        {
+            Pictures = new List<Picture>();
+            Apply(new Events.ApartmentCreated
             {
                 Id = id,
                 OwnerId = ownerId
             });
-
-        public ApartmentId Id { get; internal set; }
+        }
+        //public ApartmentId Id { get; internal set; }
 
         public Area Areas { get; internal set; }
 
@@ -28,6 +30,8 @@ namespace RJRentalOfHousing.Domain
         public UserId ApprovedBy { get; internal set; }
 
         public ApartmentState State { get; internal set; }
+
+        public List<Picture> Pictures { get; internal set; }
 
         public void SetArea(Area area)
             => Apply(new Events.ApartmentAreaUpdated
@@ -72,6 +76,29 @@ namespace RJRentalOfHousing.Domain
                 Id = Id,
             });
 
+        public void AddPicture(Uri pictureUri, PictureSize size)
+            => Apply(new Events.PictureAddedToAApartment
+            {
+                PictureId = new Guid(),
+                ApartmentId = Id,
+                Url = pictureUri.ToString(),
+                Height = size.Height,
+                Width = size.Width,
+                Order = Pictures.Max(x => x.Order)
+            });
+
+        private Picture FindFirstPicture(PictureId id) => Pictures.FirstOrDefault(x => x.Id == id);
+
+        private Picture FirstPicture => Pictures.OrderBy(x => x.Order).FirstOrDefault();
+
+        public void ResizePicture(PictureId pictureId,PictureSize newSize)
+        {
+            var picture = FindFirstPicture(pictureId);
+            if (picture == null)
+                throw new InvalidOperationException("不能修改不存在的图片的尺寸");
+            picture.Resize(newSize);
+        }
+
         protected override void EnsureValidState()
         {
             var valid =
@@ -84,13 +111,15 @@ namespace RJRentalOfHousing.Domain
                       Areas != null &&
                       Address != null &&
                       Rent?.Amount > 0 &&
-                      Deposit?.Amount > 0,
+                      Deposit?.Amount > 0 &&
+                      FirstPicture.HasCorrectSize(),
                       ApartmentState.Renting =>
                       Areas != null &&
                       Address != null &&
                       Rent?.Amount > 0 &&
                       Deposit?.Amount > 0 &&
-                      ApprovedBy != null,
+                      ApprovedBy != null &&
+                      FirstPicture.HasCorrectSize(),
                       _ => true
                   }
                 );
@@ -124,6 +153,11 @@ namespace RJRentalOfHousing.Domain
                     break;
                 case Events.AparetmentSentForReview _:
                     State = ApartmentState.PendingReview;
+                    break;
+                case Events.PictureAddedToAApartment e:
+                    var picture = new Picture(Apply);
+                    ApplyToEntity(picture, e);
+                    Pictures.Add(picture);
                     break;
             }
         }

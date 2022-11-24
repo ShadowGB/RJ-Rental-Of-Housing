@@ -2,6 +2,8 @@
 {
     public abstract class Entity<TId>:IInternalEventHandler
     {
+        protected Entity() { }
+
         private readonly Action<object> _applier;
 
         protected Entity(Action<object> applier) => _applier = applier;

@@ -1,17 +1,82 @@
 {
   "format": 1,
   "restore": {
-    "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter01\\After\\RJRentalOfHousing\\RJRentalOfHousing\\RJRentalOfHousing.csproj": {}
+    "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing\\RJRentalOfHousing.csproj": {}
   },
   "projects": {
-    "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter01\\After\\RJRentalOfHousing\\RJRentalOfHousing.Domain\\RJRentalOfHousing.Domain.csproj": {
+    "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing.Domain\\RJRentalOfHousing.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter01\\After\\RJRentalOfHousing\\RJRentalOfHousing.Domain\\RJRentalOfHousing.Domain.csproj",
+        "projectUniqueName": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing.Domain\\RJRentalOfHousing.Domain.csproj",
         "projectName": "RJRentalOfHousing.Domain",
-        "projectPath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter01\\After\\RJRentalOfHousing\\RJRentalOfHousing.Domain\\RJRentalOfHousing.Domain.csproj",
+        "projectPath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing.Domain\\RJRentalOfHousing.Domain.csproj",
         "packagesPath": "C:\\Users\\HCJ\\.nuget\\packages\\",
-        "outputPath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter01\\After\\RJRentalOfHousing\\RJRentalOfHousing.Domain\\obj\\",
+        "outputPath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\HCJ\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing.Framework\\RJRentalOfHousing.Framework.csproj": {
+                "projectPath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing.Framework\\RJRentalOfHousing.Framework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing.Framework\\RJRentalOfHousing.Framework.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing.Framework\\RJRentalOfHousing.Framework.csproj",
+        "projectName": "RJRentalOfHousing.Framework",
+        "projectPath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing.Framework\\RJRentalOfHousing.Framework.csproj",
+        "packagesPath": "C:\\Users\\HCJ\\.nuget\\packages\\",
+        "outputPath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing.Framework\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -65,14 +130,14 @@
         }
       }
     },
-    "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter01\\After\\RJRentalOfHousing\\RJRentalOfHousing\\RJRentalOfHousing.csproj": {
+    "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing\\RJRentalOfHousing.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter01\\After\\RJRentalOfHousing\\RJRentalOfHousing\\RJRentalOfHousing.csproj",
+        "projectUniqueName": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing\\RJRentalOfHousing.csproj",
         "projectName": "RJRentalOfHousing",
-        "projectPath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter01\\After\\RJRentalOfHousing\\RJRentalOfHousing\\RJRentalOfHousing.csproj",
+        "projectPath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing\\RJRentalOfHousing.csproj",
         "packagesPath": "C:\\Users\\HCJ\\.nuget\\packages\\",
-        "outputPath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter01\\After\\RJRentalOfHousing\\RJRentalOfHousing\\obj\\",
+        "outputPath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -95,8 +160,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter01\\After\\RJRentalOfHousing\\RJRentalOfHousing.Domain\\RJRentalOfHousing.Domain.csproj": {
-                "projectPath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter01\\After\\RJRentalOfHousing\\RJRentalOfHousing.Domain\\RJRentalOfHousing.Domain.csproj"
+              "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing.Domain\\RJRentalOfHousing.Domain.csproj": {
+                "projectPath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing.Domain\\RJRentalOfHousing.Domain.csproj"
+              },
+              "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing.Framework\\RJRentalOfHousing.Framework.csproj": {
+                "projectPath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing.Framework\\RJRentalOfHousing.Framework.csproj"
               }
             }
           }

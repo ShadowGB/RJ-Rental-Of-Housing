@@ -44,5 +44,22 @@
         {
             public Guid Id { get; set; }
         }
+
+        public class PictureAddedToAApartment
+        {
+            public Guid ApartmentId { get; set; }
+            public Guid PictureId { get; set; }
+            public string Url { get; set; }
+            public int Height { get; set; }
+            public int Width { get; set; }
+            public int Order { get; set; }
+        }
+
+        public class ApartmentPictureResized
+        {
+            public Guid PictureId { get; set; }
+            public int Width { get; set; }
+            public int Height { get; set; }
+        }
     }
 }

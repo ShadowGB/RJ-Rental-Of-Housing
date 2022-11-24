@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RJRentalOfHousing.Domain\RJRentalOfHousing.Domain.csproj" />
+    <ProjectReference Include="..\RJRentalOfHousing.Framework\RJRentalOfHousing.Framework.csproj" />
   </ItemGroup>
 
 </Project>
