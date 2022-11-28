@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "163zNhzlE7tQmDsonnvDihDBFF6GZBSsktg1X4U41EBGLRDVcB/81pwqS47K2aV7q6hxgG7Lj7buahR1fJs92w==",
+  "dgSpecHash": "hBEHSpDNfJS5I8uAxnGbGYuqhOeFemfY+AuqAgv7ENXeU+h9DWbpHvDYeqeORTltKtLTXHcGuUMpzn3/fAT5+A==",
   "success": true,
-  "projectFilePath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter01\\After\\RJRentalOfHousing\\RJRentalOfHousing.Domain\\RJRentalOfHousing.Domain.csproj",
+  "projectFilePath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\Before\\RJRentalOfHousing\\RJRentalOfHousing.Domain\\RJRentalOfHousing.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

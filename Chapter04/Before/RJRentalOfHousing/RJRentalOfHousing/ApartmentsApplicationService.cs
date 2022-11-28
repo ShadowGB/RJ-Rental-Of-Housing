@@ -46,10 +46,10 @@ namespace RJRentalOfHousing
                     await HandleUpdate(cmd.Id, x => x.SetAddress(new Address(cmd.Address)));
                     break;
                 case V1.SetRent cmd:
-                    await HandleUpdate(cmd.Id, x => Price.FromDecimal(cmd.Rent, cmd.CurrencyCode, _currencyLookup));
+                    await HandleUpdate(cmd.Id, x => x.SetRent(Price.FromDecimal(cmd.Rent, cmd.CurrencyCode, _currencyLookup)));
                     break;
                 case V1.SetDeposit cmd:
-                    await HandleUpdate(cmd.Id, x => Price.FromDecimal(cmd.Deposit, cmd.CurrencyCode, _currencyLookup));
+                    await HandleUpdate(cmd.Id, x => x.SetDeposit(Price.FromDecimal(cmd.Deposit, cmd.CurrencyCode, _currencyLookup)));
                     break;
                 case V1.SetRemark cmd:
                     await HandleUpdate(cmd.Id, x => x.SetRemark(cmd.Remark));

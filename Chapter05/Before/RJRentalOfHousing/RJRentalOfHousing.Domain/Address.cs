@@ -2,6 +2,7 @@
 {
     public record Address
     {
+        protected Address() { }
         public string Value { get; internal set; }
 
         public Address(string value)
@@ -12,5 +13,7 @@
         }
 
         public static implicit operator string(Address value) => value.Value;
+
+        public static Address NoAddress = new Address();
     }
 }

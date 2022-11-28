@@ -2,6 +2,7 @@
 {
     public record UserId
     {
+        protected UserId() { }
         public Guid Value { get; internal set; }
 
         public UserId(Guid value)
@@ -12,5 +13,7 @@
         }
 
         public static implicit operator Guid(UserId value) => value.Value;
+
+        public static UserId NoUser = new UserId();
     }
 }

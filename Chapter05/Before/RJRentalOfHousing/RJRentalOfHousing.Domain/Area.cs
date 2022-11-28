@@ -2,6 +2,8 @@
 {
     public record Area
     {
+        protected Area() { }
+
         public decimal Value { get; internal set; }
 
         public Area(decimal value)
@@ -12,5 +14,7 @@
         }
 
         public static implicit operator decimal(Area value) => value.Value;
+
+        public static Area NoArea = new Area();
     }
 }

@@ -6094,11 +6094,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing.Tests\\RJRentalOfHousing.Tests.csproj",
+      "projectUniqueName": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter04\\Before\\RJRentalOfHousing\\RJRentalOfHousing.Tests\\RJRentalOfHousing.Tests.csproj",
       "projectName": "RJRentalOfHousing.Tests",
-      "projectPath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing.Tests\\RJRentalOfHousing.Tests.csproj",
+      "projectPath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter04\\Before\\RJRentalOfHousing\\RJRentalOfHousing.Tests\\RJRentalOfHousing.Tests.csproj",
       "packagesPath": "C:\\Users\\HCJ\\.nuget\\packages\\",
-      "outputPath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing.Tests\\obj\\",
+      "outputPath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter04\\Before\\RJRentalOfHousing\\RJRentalOfHousing.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -6121,8 +6121,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing.Domain\\RJRentalOfHousing.Domain.csproj": {
-              "projectPath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing.Domain\\RJRentalOfHousing.Domain.csproj"
+            "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter04\\Before\\RJRentalOfHousing\\RJRentalOfHousing.Domain\\RJRentalOfHousing.Domain.csproj": {
+              "projectPath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter04\\Before\\RJRentalOfHousing\\RJRentalOfHousing.Domain\\RJRentalOfHousing.Domain.csproj"
             }
           }
         }

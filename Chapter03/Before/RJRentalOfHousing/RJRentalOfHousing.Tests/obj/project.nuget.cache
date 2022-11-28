@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "72AR3qn0BrPgkEkFjjc+M9kZJPI/RKV5rcZh8Hj9bWCNpKdrF++SoCO/+eqjO5I+j56TZ8/nUh6Dst1h9cbyyg==",
+  "dgSpecHash": "qictIGQgl/bwdXLnMwpfMw2m0FVoGBGfcjRCplMF6rqlYn8xd3fqaae1y9EoJOzu6JClM6SDtqqAMv3aZa4jOg==",
   "success": true,
-  "projectFilePath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter01\\After\\RJRentalOfHousing\\RJRentalOfHousing.Tests\\RJRentalOfHousing.Tests.csproj",
+  "projectFilePath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\Before\\RJRentalOfHousing\\RJRentalOfHousing.Tests\\RJRentalOfHousing.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HCJ\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\HCJ\\.nuget\\packages\\microsoft.codecoverage\\17.3.2\\microsoft.codecoverage.17.3.2.nupkg.sha512",

@@ -2,6 +2,8 @@
 {
     public record Money
     {
+        protected Money() { }
+
         private const string DefaultCurrency = "CNY";
 
         public decimal Amount { get; internal set; }

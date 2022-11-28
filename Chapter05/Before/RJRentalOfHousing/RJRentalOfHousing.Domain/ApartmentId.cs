@@ -2,6 +2,7 @@
 {
     public record ApartmentId
     {
+        protected ApartmentId() { }
         public Guid Value { get; internal set; }
 
         public ApartmentId(Guid value)

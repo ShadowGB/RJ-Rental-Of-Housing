@@ -50,7 +50,7 @@ namespace RJRentalOfHousing.Domain
                 Address = address
             });
 
-        public void SetRent(Price rent)
+        public void SetRent(Rent rent)
             => Apply(new Events.AparementRentUpdated
             {
                 Id = Id,
@@ -58,7 +58,7 @@ namespace RJRentalOfHousing.Domain
                 CurrencyCode = rent.Currency.CurrencyCode
             });
 
-        public void SetDeposit(Price deposit)
+        public void SetDeposit(Deposit deposit)
             => Apply(new Events.ApartmentDepositUpdated
             {
                 Id = Id,

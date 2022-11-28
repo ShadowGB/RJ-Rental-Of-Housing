@@ -4,6 +4,8 @@ namespace RJRentalOfHousing.Domain
 {
     public class Apartment:AggregateRoot<ApartmentId>
     {
+        protected Apartment(){ }
+
         public Apartment(ApartmentId id, UserId ownerId)
         {
             Pictures = new List<Picture>();
@@ -13,21 +15,22 @@ namespace RJRentalOfHousing.Domain
                 OwnerId = ownerId
             });
         }
-        //public ApartmentId Id { get; internal set; }
 
-        public Area Areas { get; internal set; }
+        public Guid ApartmentId { get; internal set; }
 
-        public Address Address { get;internal set; }
+        public Area? Areas { get; internal set; }
 
-        public Price Rent { get; internal set; }
+        public Address? Address { get;internal set; }
 
-        public Price Deposit { get; internal set; }
+        public Rent? Rent { get; internal set; }
 
-        public UserId Owner { get; internal set; }
+        public Deposit? Deposit { get; internal set; }
 
-        public string Remark { get; internal set; }
+        public UserId? Owner { get; internal set; }
 
-        public UserId ApprovedBy { get; internal set; }
+        public string? Remark { get; internal set; }
+
+        public UserId? ApprovedBy { get; internal set; }
 
         public ApartmentState State { get; internal set; }
 
@@ -47,7 +50,7 @@ namespace RJRentalOfHousing.Domain
                 Address = address
             });
 
-        public void SetRent(Price rent)
+        public void SetRent(Rent rent)
             => Apply(new Events.AparementRentUpdated
             {
                 Id = Id,
@@ -55,7 +58,7 @@ namespace RJRentalOfHousing.Domain
                 CurrencyCode = rent.Currency.CurrencyCode
             });
 
-        public void SetDeposit(Price deposit)
+        public void SetDeposit(Deposit deposit)
             => Apply(new Events.ApartmentDepositUpdated
             {
                 Id = Id,
@@ -135,6 +138,7 @@ namespace RJRentalOfHousing.Domain
                     Id = new ApartmentId(e.Id);
                     Owner = new UserId(e.OwnerId);
                     State = ApartmentState.Created;
+                    ApartmentId = e.Id;
                     break;
                 case Events.ApartmentAreaUpdated e:
                     Areas = new Area(e.Areas);
@@ -143,10 +147,10 @@ namespace RJRentalOfHousing.Domain
                     Address = new Address(e.Address);
                     break;
                 case Events.AparementRentUpdated e:
-                    Rent = new Price(e.Rent, e.CurrencyCode);
+                    Rent = new Rent(e.Rent, e.CurrencyCode);
                     break;
                 case Events.ApartmentDepositUpdated e:
-                    Deposit = new Price(e.Deposit, e.CurrencyCode);
+                    Deposit = new Deposit(e.Deposit, e.CurrencyCode);
                     break;
                 case Events.ApartmentRemarkUpdated e:
                     Remark = e.Remark;

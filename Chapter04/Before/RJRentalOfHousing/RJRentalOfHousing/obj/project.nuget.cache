@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pLJTwxfdtalt9l50fEyOhqLQzfOZ0RSnjLnC5IzQy4cL8COL5Uksf9WoVaNaWqvzd1m6VZHtXiiLhDxua8zklw==",
+  "dgSpecHash": "8ayB2gElD8aMf3u1JgQ18tFyaxpc5X3CqT7n04fCnrQPQ2a2JrDNwGZDe/+n0iqo5Wqf6ay75EzGigD3SSiukg==",
   "success": true,
-  "projectFilePath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter03\\After\\RJRentalOfHousing\\RJRentalOfHousing\\RJRentalOfHousing.csproj",
+  "projectFilePath": "F:\\DDDDemo\\RJ-Rental-Of-Housing\\Chapter04\\Before\\RJRentalOfHousing\\RJRentalOfHousing\\RJRentalOfHousing.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HCJ\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\HCJ\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
