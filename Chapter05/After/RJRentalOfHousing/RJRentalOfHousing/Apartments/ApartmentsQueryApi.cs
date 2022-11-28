@@ -19,5 +19,20 @@ namespace RJRentalOfHousing.Apartments
         [Route("createlist")]
         public Task<IActionResult> Query([FromQuery]QueryModels.GetCreatedApartment request)
             => RequestHandler.HandleQuery(() => _dbConnection.Query(request), _log);
+
+        [HttpGet]
+        [Route("getall")]
+        public Task<IActionResult> Query([FromQuery] QueryModels.GetAllApartmentsByPage request)
+            => RequestHandler.HandleQuery(() => _dbConnection.Query(request), _log);
+
+        [HttpGet]
+        [Route("getowners")]
+        public Task<IActionResult> Query([FromQuery] QueryModels.GetOwnersApartment request)
+            => RequestHandler.HandleQuery(() => _dbConnection.Query(request), _log);
+
+        [HttpGet]
+        [Route("getdetail")]
+        public Task<IActionResult> Query([FromQuery] QueryModels.GetApartmentDetailById request)
+            => RequestHandler.HandleQuery(() => _dbConnection.Query(request), _log);
     }
 }
